@@ -9,16 +9,16 @@ int main(void) {
     scanf("%lf %c %lf", &x, &op, &y);
 
     switch (op) {
-        case "+" :
+        case '+' :
             printf("%lf %c %lf = %.2f\n", x, op, y, x + y);
             break;
-        case "-" :
+        case '-' :
             printf("%lf %c %lf = %.2f\n", x, op, y, x - y);
             break;
-        case "*" :
+        case '*':
             printf("%lf %c %lf = %.2f\n", x, op, y, x * y);
             break;
-        case "/" :
+        case '/':
             if (y != 0) {
                 printf("%lf %c %lf = %.2f\n", x, op, y, x / y);
             } else {
@@ -33,7 +33,7 @@ int main(void) {
 
 
 
-
+// clang main.c -o main && ./main
 
 
 
