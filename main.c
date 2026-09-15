@@ -2,19 +2,20 @@
 #include <stdio.h>
 
 
-int factorial(int n) {
-    int res = 1;
-    for (int i = 1; i <= n; i++) {
-        res *= i;
+int count_digits(int n) {
+    int counter = 1;
+    while (n >= 10) {
+        n /= 10;
+        counter += 1;
     }
-    return res;
+    return counter;
 }
 
 
 int main(void) {
     int x;
     scanf("%d", &x);
-    printf("factorial of %d is %d\n", x, factorial(x));
+    printf("%d has %d digits\n", x, count_digits(x));
     return 0;
 }
 
