@@ -2,20 +2,32 @@
 #include <stdio.h>
 
 
-int count_digits(int n) {
-    int counter = 1;
-    while (n >= 10) {
-        n /= 10;
-        counter += 1;
-    }
-    return counter;
-}
-
-
 int main(void) {
-    int x;
-    scanf("%d", &x);
-    printf("%d has %d digits\n", x, count_digits(x));
+    double x, y;
+    char op;
+    printf("enter fisrt num, opeartion and second num: ");
+    scanf("%lf %c %lf", &x, &op, &y);
+
+    switch (op) {
+        case "+" :
+            printf("%lf %c %lf = %.2f\n", x, op, y, x + y);
+            break;
+        case "-" :
+            printf("%lf %c %lf = %.2f\n", x, op, y, x - y);
+            break;
+        case "*" :
+            printf("%lf %c %lf = %.2f\n", x, op, y, x * y);
+            break;
+        case "/" :
+            if (y != 0) {
+                printf("%lf %c %lf = %.2f\n", x, op, y, x / y);
+            } else {
+                printf("ERROR: second num cant be zero\n");
+            }
+            break;
+        default:
+            printf("ERROR: unknown operation\n");
+    }
     return 0;
 }
 
