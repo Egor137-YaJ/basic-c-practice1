@@ -1,22 +1,28 @@
 
 #include <stdio.h>
 
-int isEven(int n) {
-    if (n % 2 == 0) {
-        return 1;
+int max_of_3(int a, int b, int c) {
+    int max = a;
+    if (b > max) {
+        max = b;
+    } else if (c > max) {
+        max = c;
     } else {
-        return 0;
+        max = a;
     }
+    return max;
 }
+
 
 int main(void) {
     int x;
+    int y;
+    int z;
     scanf("%d", &x);
-    if (isEven(x)) {
-        printf("%d is even \n", x);
-    } else {
-        printf("%d is odd \n", x);
-    }
+    scanf("%d", &y);
+    scanf("%d", &z);
+    int max = max_of_3(x, y, z);
+    printf("maximum of %d, %d, %d is %d\n", x, y, z, max);
     return 0;
 }
 
